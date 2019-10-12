@@ -48,6 +48,7 @@ class Form extends Component {
                     onChange={this.handleChange} />
                     {/* when I inpect Chrome, on change, the value tag should automatically update to whatever gets entered into the input field*/}
                 <input type="button" value="submit" onClick={this.submitForm} />
+                {/* ^^ We're using an onClick instead of an onSubmit since we're not using the standard submit functionality. The click will call the submitForm we just made. */}
             </form>
         );
     }
