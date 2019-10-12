@@ -17,6 +17,9 @@ const TableHeader = () => {
             <tr key={index}>
                 <td>{row.name}</td>
                 <td>{row.job}</td>
+            <td>
+                <button onClick={() => props.removeData(index)}>Delete</button>
+            </td>
             </tr>
           )
         }
@@ -30,7 +33,7 @@ const TableHeader = () => {
   class Table extends Component {
     render() {
 
-        const {charParam} = this.props
+        const {charParam, removeCharacter} = this.props
         //const charParam = this.props.charParam
 
         // another way of wrtiting what's in the top --> const charParam = this.props.charParam
@@ -39,7 +42,7 @@ const TableHeader = () => {
       return (
         <table>
           <TableHeader />
-          <TableBody charData={charParam}/>
+          <TableBody charData={charParam} removeData={removeCharacter}/>
         </table>
       )
     }
